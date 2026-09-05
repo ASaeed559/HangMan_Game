@@ -33,8 +33,10 @@ hangman_art = {
 
 
 def display_man(wrong_guesses):
+    print("******HANGMAN*******")
     for line in hangman_art[wrong_guesses]:
         print(line)
+    print("********************")
 
 
 
@@ -50,25 +52,46 @@ def main():
     answer = random.choice(words)
     hint = ["_"] * len(answer)
     wrong_guesses = 0
+    guessed_letters = set()
     is_running = True
 
     while is_running:
 
         display_man(wrong_guesses)
         display_hint(hint)
-        guess = input("Guess a letter: ").lower()
-
+        guess = input(f"Guess a letter with {len(hint)} letters: ").lower()
+        print("____________________________")
 
         if not guess.isalpha() or len(guess) != 1:
             print("Please enter a letter")
             continue
 
+        if guess in guessed_letters:
+            print(f"{guess} is already guessed")
+            print("Guess again another letter")
+
+            continue
+        guessed_letters.add(guess)
+
         if guess in answer:
+
             for i in range(len(answer)):
                 if answer[i] == guess:
                     hint[i] = guess
-        elif guess not in answer:
+        else:
             wrong_guesses += 1
+
+        if "_" not in hint:
+            display_man(wrong_guesses)
+            display_hint(hint)
+            display_word(answer)
+            print("You won the game!")
+            is_running = False
+        elif wrong_guesses >= len(hangman_art) - 1:
+            display_man(wrong_guesses)
+            print("You lost the game!")
+            print(f"the correct answer was ({answer}).")
+            is_running = False
 
 
 
