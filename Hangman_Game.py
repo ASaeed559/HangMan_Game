@@ -4,7 +4,7 @@
 
 words = ("apple", "banana", "cherry", "mango", "grape", "strawberry")
 
-#dictionary for arts.:
+#dictionary for arts:
 
 hangman_art = {0: ("       ",
             "       ",
