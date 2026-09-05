@@ -1,5 +1,5 @@
 # words for hangman game:
-
+# countries names
 words = (
     "afghanistan", "albania", "algeria", "andorra", "angola", "argentina",
     "armenia", "australia", "austria", "azerbaijan", "bahamas", "bahrain",
