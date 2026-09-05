@@ -2,7 +2,7 @@ import time
 import random
 from wordlist import words
 
-#Hangman World Countries Game
+#Hangman Countries Game
 
 
 
