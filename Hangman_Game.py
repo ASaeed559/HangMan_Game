@@ -1,10 +1,10 @@
 import time
 import random
+from wordlist import words
 
 #Hangman Game
 
 
-words = ("apple", "banana", "cherry", "mango", "grape", "strawberry")
 
 #dictionary for arts:
 
