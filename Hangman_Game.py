@@ -59,7 +59,7 @@ def main():
 
         display_man(wrong_guesses)
         display_hint(hint)
-        guess = input(f"Guess a letter with {len(hint)} letters: ").lower()
+        guess = input(f"Guess name of a country with {len(hint)} letters: ").lower()
         print("____________________________")
 
         if not guess.isalpha() or len(guess) != 1:
@@ -83,7 +83,6 @@ def main():
 
         if "_" not in hint:
             display_man(wrong_guesses)
-            display_hint(hint)
             display_word(answer)
             print("You won the game!")
             is_running = False
